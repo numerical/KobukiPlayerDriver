@@ -31,14 +31,12 @@ int Kobuki::Setup() {
         fprintf(stderr, "%s\n", e.what());
     }
 
-    StartThread();
     return 0;
 }
 
 int Kobuki::Shutdown() {
     kobuki.setBaseControl(0, 0); // Stop robot
     kobuki.disable();
-    StopThread();
     return 0;
 }
 

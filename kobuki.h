@@ -7,7 +7,7 @@
 
 class Kobuki : public Driver {
     private:
-        position2d_id position_addr;
+        player_devaddr_t position_addr;
         player_position2d_data data;
 
         kobuki::Parameters parameters;
