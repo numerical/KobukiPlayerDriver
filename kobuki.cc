@@ -36,7 +36,8 @@ int Kobuki::Setup() {
 }
 
 int Kobuki::Shutdown() {
-    kobuki.shutdown();
+    kobuki.setBaseControl(0, 0); // Stop robot
+    kobuki.disable();
     StopThread();
     return 0;
 }
