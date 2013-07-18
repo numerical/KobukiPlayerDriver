@@ -4,13 +4,13 @@ Kobuki::Kobuki(ConfigFile *cf, int section)
     : Driver(cf, section, true, PLAYER_MSGQUEUE_DEFAULT_MAXLEN) {
 
 
-    parameters.device_port = cf->readString(section,
+    parameters.device_port = cf->ReadString(section,
                                             "device", "/dev/ttyUSB0");
     parameters.enable_acceleration_limiter=false;
 
     memset(&position_addr, 0, sizeof(position_addr));
 
-    if(cf->readDeviceAddr(&position_addr, section, "provides",
+    if(cf->ReadDeviceAddr(&position_addr, section, "provides",
                           PLAYER_POSITION2D_CODE, -1, NULL) == 0) {
         if(this->AddInterface(position_addr) != 0) {
             this->SetError(-1);
