@@ -25,6 +25,5 @@ class Kobuki : public Driver {
         virtual int Unsubscribe(player_devaddr_t);
         virtual int ProcessMessage(MessageQueue*, player_msghdr*, void*);
 
-        virtual void PutData();
 };
 #endif

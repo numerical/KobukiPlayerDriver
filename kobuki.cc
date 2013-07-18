@@ -66,10 +66,6 @@ int Kobuki::ProcessMessage(MessageQueue *queue, player_msghdr *hdr,
 
 }
 
-void Kobuki::PutData() {
-    Publish(position_addr, NULL, PLAYER_MSGTYPE_DATA,
-            PLAYER_POSITION2D_DATA, (void*)data, sizeof(data));
-}
 
 Driver* Kobuki_Init(ConfigFile* cf, int section) {
     return (Driver*)(new Kobuki(cf, section));
